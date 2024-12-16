@@ -1,0 +1,20 @@
+How to connect our prisma to mysql
+1, npm install prisma
+2, npm install prisma/client 
+3, npx prisma init
+4, inside the prisma/prisma.schema
+    change provider to myslql 
+        eg provide: 'mysql'
+5, inside .env file chnage the things inside the bracket by your look the following
+    DATABASE_URL="mysql://{connection username}:(connection password)@localhost:{port}/created database"
+
+6, then create the table inside the mysql or using the following syntax inside the prssma.schema
+
+model TableName {
+    id: int @db.default(autoincreament);
+    other: String @db.VarChar(number)
+} like this we can make more than one tables
+
+7, npx prisma db pull
+8, npx prisma generate
+9, npx prisma migrate dev
